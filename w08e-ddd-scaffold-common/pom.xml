@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.w08e</groupId>
+        <artifactId>w08e-ddd-scaffold</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>w08e-ddd-scaffold-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>w08e-ddd-scaffold-bom</module>
+        <module>w08e-ddd-scaffold-core</module>
+        <module>w08e-ddd-scaffold-json</module>
+        <module>w08e-ddd-scaffold-oss</module>
+        <module>w08e-ddd-scaffold-web</module>
+        <module>w08e-ddd-scaffold-log</module>
+        <module>w08e-ddd-scaffold-ratelimiter</module>
+        <module>w08e-ddd-scaffold-redis</module>
+        <module>w08e-ddd-scaffold-satoken</module>
+    </modules>
+
+    <description>
+        common 通用模块
+    </description>
+
+</project>
