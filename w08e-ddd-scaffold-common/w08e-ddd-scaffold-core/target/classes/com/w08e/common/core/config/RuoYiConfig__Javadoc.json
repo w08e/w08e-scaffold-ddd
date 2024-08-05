@@ -1,0 +1,1 @@
+{"doc":" 读取项目相关配置\n\n @author Lion Li\n","fields":[{"name":"name","doc":" 项目名称\n"},{"name":"version","doc":" 版本\n"},{"name":"copyrightYear","doc":" 版权年份\n"}],"enumConstants":[],"methods":[],"constructors":[]}
