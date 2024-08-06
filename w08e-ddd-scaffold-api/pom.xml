@@ -15,6 +15,12 @@
     <description>api模块</description>
 
     <dependencies>
+        <!-- infrastructure模块 -->
+        <dependency>
+            <groupId>com.w08e</groupId>
+            <artifactId>w08e-ddd-scaffold-trigger</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 
 
