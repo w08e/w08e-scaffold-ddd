@@ -19,6 +19,7 @@ ddd脚手架
   换言之 从mysql到oracle 从Kafka到rocketmq。是不需要改你领域逻辑的。 
 
 2. 创建或调整领域流程
+   凑乎看 我不喜欢画图
 <img width="921" alt="image" src="https://github.com/user-attachments/assets/6ccdb31f-62fd-4f2a-a726-3d20f1694954">
 
 主意：save这个操作是在应用服务做（指责分离单一职责又保证领域的整洁）。领域中add event后面讲
