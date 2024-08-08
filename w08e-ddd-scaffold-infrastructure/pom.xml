@@ -12,17 +12,8 @@
 
     <artifactId>w08e-ddd-scaffold-infrastructure</artifactId>
 
-    <description>
-    </description>
 
     <dependencies>
-        <!-- infrastructure模块 -->
-        <dependency>
-            <groupId>com.w08e</groupId>
-            <artifactId>w08e-ddd-scaffold-api</artifactId>
-            <version>${revision}</version>
-        </dependency>
-
         <!-- domain -->
         <dependency>
             <groupId>com.w08e</groupId>
@@ -30,10 +21,23 @@
             <version>${revision}</version>
         </dependency>
 
+        <!-- domain -->
+        <dependency>
+            <groupId>com.w08e</groupId>
+            <artifactId>w08e-ddd-scaffold-core</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
         <!-- spring-jpa -->
         <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
         </dependency>
 
         <!-- mysql8.0 -->
@@ -42,7 +46,6 @@
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
         </dependency>
-
         <!-- mapstruct-plus -->
         <dependency>
             <groupId>io.github.linpeilie</groupId>
@@ -50,11 +53,26 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-spatial</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.w08e</groupId>
             <artifactId>w08e-ddd-scaffold-redis</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>checker-qual</artifactId>
+                    <groupId>org.checkerframework</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
-
     </dependencies>
 
 </project>

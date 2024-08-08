@@ -19,9 +19,32 @@
         <!-- infrastructure模块 -->
         <dependency>
             <groupId>com.w08e</groupId>
-            <artifactId>w08e-ddd-scaffold-infrastructure</artifactId>
+            <artifactId>w08e-ddd-scaffold-api</artifactId>
+            <version>${revision}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>postgresql</artifactId>
+                    <groupId>org.postgresql</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>hibernate-spatial</artifactId>
+                    <groupId>org.hibernate</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>checker-qual</artifactId>
+                    <groupId>org.checkerframework</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>com.w08e</groupId>
+            <artifactId>w08e-ddd-scaffold-web</artifactId>
             <version>${revision}</version>
         </dependency>
+
     </dependencies>
 
     <build>

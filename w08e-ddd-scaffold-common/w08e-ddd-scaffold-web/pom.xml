@@ -44,19 +44,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>cn.hutool</groupId>-->
-<!--            <artifactId>hutool-captcha</artifactId>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>cn.hutool</groupId>-->
-<!--            <artifactId>hutool-crypto</artifactId>-->
-<!--        </dependency>-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
     </dependencies>
 
 </project>
