@@ -1,11 +1,12 @@
 package com.w08e.application.controller;
 
 import cn.hutool.core.lang.Pair;
-import com.w08e.common.core.domain.result.Result;
 import com.w08e.api.command.GoodsCommand;
 import com.w08e.api.service.GoodsService;
+import com.w08e.common.core.domain.result.R;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,10 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class GoodsController {
 
-    private GoodsService goodsService;
+    private final GoodsService goodsService;
 
     @PostMapping("/goods")
-    public Result<Pair<Long,String>> create(GoodsCommand goodsCommand){
-        return Result.success(goodsService.create(goodsCommand));
+    public R<Pair<Long,String>> create(@RequestBody GoodsCommand goodsCommand){
+        return R.ok(goodsService.create(goodsCommand));
     }
 }

@@ -59,4 +59,8 @@ public abstract class AggregateRoot implements Identified, MarkerInterface {
         return events;
     }
 
+    @Override
+    public Long getIdentifier() {
+        return id;
+    }
 }

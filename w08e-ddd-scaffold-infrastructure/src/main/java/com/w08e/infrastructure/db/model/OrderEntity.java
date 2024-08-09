@@ -2,12 +2,11 @@ package com.w08e.infrastructure.db.model;
 
 
 import com.w08e.common.core.domain.BaseEntity;
-import com.w08e.infrastructure.db.enums.OrderStatusEnums;
-import lombok.Data;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 
 /**
@@ -16,12 +15,13 @@ import java.time.LocalDateTime;
  */
 @Data
 @Entity
-@Table(name = "order")
+@Table(name = "ddd_order")
+@EqualsAndHashCode(callSuper = true)
 public class OrderEntity extends BaseEntity<Long> {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "user_id")
@@ -30,17 +30,14 @@ public class OrderEntity extends BaseEntity<Long> {
     @Column(name = "goods_id")
     private Long goodsId;
 
-    @Column(name = "price")
-    private BigDecimal price;
+    @Column(name = "real_price")
+    private BigDecimal realPrice;
 
-    @Column(name = "status")
-    @Enumerated(EnumType.STRING)
-    private OrderStatusEnums paid;
+    @Column(name = "pay_status")
+    private String payStatus;
 
     @Column(name = "quantity")
     private Integer quantity;
 
-    @Column(name = "create_time")
-    private LocalDateTime createTime;
 
 }

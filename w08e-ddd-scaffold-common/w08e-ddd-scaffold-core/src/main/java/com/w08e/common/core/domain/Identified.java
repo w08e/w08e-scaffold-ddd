@@ -18,5 +18,5 @@ public interface Identified {
         return count != collection.size();
     }
 
-    String getIdentifier();
+    Long getIdentifier();
 }

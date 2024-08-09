@@ -1,10 +1,10 @@
 package com.w08e.web.config;
 
 import com.w08e.common.core.utils.StringUtils;
-import jakarta.servlet.DispatcherType;
 import com.w08e.web.config.properties.XssProperties;
 import com.w08e.web.filter.RepeatableFilter;
 import com.w08e.web.filter.XssFilter;
+import jakarta.servlet.DispatcherType;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

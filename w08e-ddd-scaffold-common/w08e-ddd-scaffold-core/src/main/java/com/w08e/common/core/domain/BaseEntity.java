@@ -1,6 +1,7 @@
 package com.w08e.common.core.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Version;
 import lombok.Data;
 
 import java.io.Serial;
