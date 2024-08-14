@@ -4,6 +4,7 @@ import com.w08e.common.core.domain.AggregateRoot;
 import com.w08e.common.core.domain.user.User;
 import com.w08e.common.core.exception.ServiceException;
 import com.w08e.common.core.utils.ValidationUtil;
+import com.w08e.domain.goods.event.GoodsAddEvent;
 import lombok.Getter;
 
 import java.math.BigDecimal;
@@ -40,6 +41,7 @@ public class Goods extends AggregateRoot {
         this.category = category;
         this.addPerson = user.getName();
         this.name = name;
+        this.raiseEvent(new GoodsAddEvent(this.getId()));
     }
 
     public Goods(String name, BigDecimal originalPrice, BigDecimal discountPrice, Integer stock, String category, String desc, User user) {

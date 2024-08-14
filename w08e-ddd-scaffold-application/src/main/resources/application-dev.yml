@@ -3,7 +3,7 @@ spring:
     activate:
       on-profile: dev
   application:
-    name: w08e-user
+    name: w08e-ddd
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://43.140.221.15:3307/xiaomai?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull

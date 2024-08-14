@@ -1,11 +1,9 @@
 package com.w08e.infrastructure.repository;
 
 
-import com.w08e.common.core.domain.BaseRepository;
 import com.w08e.domain.goods.Goods;
 import com.w08e.domain.goods.repositoy.GoodsRepository;
 import com.w08e.infrastructure.db.model.GoodsEntity;
-import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -45,7 +43,6 @@ public class GoodsJpaRepository extends BaseRepository<Long, Goods, GoodsEntity>
         return null;
     }
 
-
     @Override
     public void delete(Long aLong) {
 
@@ -57,4 +54,5 @@ public class GoodsJpaRepository extends BaseRepository<Long, Goods, GoodsEntity>
                 criteriaBuilder.equal(root.get("name"), name)
         );
     }
+
 }

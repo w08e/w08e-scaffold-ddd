@@ -13,15 +13,15 @@
     <artifactId>w08e-ddd-scaffold-common</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>w08e-ddd-scaffold-bom</module>
-        <module>w08e-ddd-scaffold-core</module>
-        <module>w08e-ddd-scaffold-json</module>
-        <module>w08e-ddd-scaffold-oss</module>
-        <module>w08e-ddd-scaffold-web</module>
-        <module>w08e-ddd-scaffold-log</module>
-        <module>w08e-ddd-scaffold-ratelimiter</module>
-        <module>w08e-ddd-scaffold-redis</module>
-        <module>w08e-ddd-scaffold-satoken</module>
+        <module>w08e-ddd-scaffold-common-bom</module>
+        <module>w08e-ddd-scaffold-common-core</module>
+        <module>w08e-ddd-scaffold-common-json</module>
+        <module>w08e-ddd-scaffold-common-oss</module>
+        <module>w08e-ddd-scaffold-common-web</module>
+        <module>w08e-ddd-scaffold-common-log</module>
+        <module>w08e-ddd-scaffold-common-ratelimiter</module>
+        <module>w08e-ddd-scaffold-common-redis</module>
+        <module>w08e-ddd-scaffold-common-satoken</module>
     </modules>
 
     <description>

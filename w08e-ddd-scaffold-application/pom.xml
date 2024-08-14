@@ -45,7 +45,7 @@
 
         <dependency>
             <groupId>com.w08e</groupId>
-            <artifactId>w08e-ddd-scaffold-web</artifactId>
+            <artifactId>w08e-ddd-scaffold-common-web</artifactId>
             <version>${revision}</version>
         </dependency>
 

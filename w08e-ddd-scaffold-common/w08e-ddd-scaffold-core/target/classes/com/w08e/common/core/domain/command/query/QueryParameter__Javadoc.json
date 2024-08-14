@@ -1,1 +1,0 @@
-{"doc":" @author 梦想成为超人的猪猪侠\n","fields":[{"name":"pageNumber","doc":" 页码\n"},{"name":"pageSize","doc":" 每页条数\n"},{"name":"withTotal","doc":" 是否查询总条目\n"},{"name":"sorts","doc":" 排序\n"}],"enumConstants":[],"methods":[],"constructors":[]}

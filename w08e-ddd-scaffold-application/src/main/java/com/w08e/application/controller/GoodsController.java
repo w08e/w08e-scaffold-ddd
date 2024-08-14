@@ -3,7 +3,7 @@ package com.w08e.application.controller;
 import cn.hutool.core.lang.Pair;
 import com.w08e.api.command.GoodsCommand;
 import com.w08e.api.service.GoodsService;
-import com.w08e.common.core.domain.result.R;
+import com.w08e.common.core.result.R;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

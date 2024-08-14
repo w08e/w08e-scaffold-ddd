@@ -1,6 +1,6 @@
 package com.w08e.api.command;
 
-import com.w08e.common.core.domain.command.Command;
+import com.w08e.common.core.command.Command;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 

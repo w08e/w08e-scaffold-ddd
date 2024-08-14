@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.w08e</groupId>
+    <artifactId>w08e-ddd-scaffold-common-bom</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <description>
+        common依赖项
+    </description>
+
+    <properties>
+        <revision>1.0-SNAPSHOT</revision>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 核心模块 -->
+            <dependency>
+                <groupId>com.w08e</groupId>
+                <artifactId>w08e-ddd-scaffold-common-core</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- 调度模块 -->
+            <dependency>
+                <groupId>com.w08e</groupId>
+                <artifactId>w08e-ddd-scaffold-job</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- 日志记录 -->
+            <dependency>
+                <groupId>com.w08e</groupId>
+                <artifactId>w08e-ddd-scaffold-common-log</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+
+            <!-- OSS -->
+            <dependency>
+                <groupId>com.w08e</groupId>
+                <artifactId>w08e-ddd-scaffold-common-oss</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- 限流 -->
+            <dependency>
+                <groupId>com.w08e</groupId>
+                <artifactId>w08e-ddd-scaffold-common-ratelimiter</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- 缓存服务 -->
+            <dependency>
+                <groupId>com.w08e</groupId>
+                <artifactId>w08e-ddd-scaffold-common-redis</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- satoken -->
+            <dependency>
+                <groupId>com.w08e</groupId>
+                <artifactId>w08e-ddd-scaffold-common-satoken</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- web服务 -->
+            <dependency>
+                <groupId>com.w08e</groupId>
+                <artifactId>w08e-ddd-scaffold-common-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+
+            <!-- 序列化模块 -->
+            <dependency>
+                <groupId>com.w08e</groupId>
+                <artifactId>w08e-ddd-scaffold-common-json</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
