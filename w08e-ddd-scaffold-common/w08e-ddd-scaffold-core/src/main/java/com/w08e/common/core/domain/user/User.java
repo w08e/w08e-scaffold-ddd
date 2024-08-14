@@ -1,4 +1,4 @@
-package com.w08e.domain.user;
+package com.w08e.common.core.domain.user;
 
 import com.w08e.common.core.domain.AggregateRoot;
 import lombok.AllArgsConstructor;

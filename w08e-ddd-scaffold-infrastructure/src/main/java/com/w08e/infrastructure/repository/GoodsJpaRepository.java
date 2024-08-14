@@ -20,8 +20,8 @@ import java.util.List;
 @Transactional
 public class GoodsJpaRepository extends BaseRepository<Long, Goods, GoodsEntity> implements GoodsRepository {
 
-    public GoodsJpaRepository(EntityManager entityManager) {
-        super(GoodsEntity.class, entityManager);
+    public GoodsJpaRepository() {
+        super(GoodsEntity.class);
     }
 
     @Override

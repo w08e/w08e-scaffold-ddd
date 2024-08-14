@@ -34,7 +34,7 @@
         <hutool.version>5.8.22</hutool.version>
         <springdoc.version>1.6.15</springdoc.version>
         <poi.version>5.2.3</poi.version>
-        <spring-data-jpa.version>3.1.0</spring-data-jpa.version>
+        <spring-data-jpa.version>3.2.6</spring-data-jpa.version>
         <!-- 离线IP地址定位库 -->
         <ip2region.version>2.7.0</ip2region.version>
         <lombok.version>1.18.30</lombok.version>

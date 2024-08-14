@@ -1,9 +1,9 @@
 package com.w08e.domain.goods;
 
 import com.w08e.common.core.domain.AggregateRoot;
+import com.w08e.common.core.domain.user.User;
 import com.w08e.common.core.exception.ServiceException;
 import com.w08e.common.core.utils.ValidationUtil;
-import com.w08e.domain.user.User;
 import lombok.Getter;
 
 import java.math.BigDecimal;

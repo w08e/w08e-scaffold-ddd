@@ -1,10 +1,10 @@
 package com.w08e.domain.goods.factory;
 
 import cn.hutool.core.collection.CollectionUtil;
+import com.w08e.common.core.domain.user.User;
 import com.w08e.common.core.exception.ServiceException;
 import com.w08e.domain.goods.Goods;
 import com.w08e.domain.goods.repositoy.GoodsRepository;
-import com.w08e.domain.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

@@ -1,8 +1,8 @@
 package com.w08e.domain.order;
 
 import com.w08e.common.core.domain.AggregateRoot;
+import com.w08e.common.core.domain.user.User;
 import com.w08e.domain.goods.Goods;
-import com.w08e.domain.user.User;
 import lombok.Data;
 
 import java.math.BigDecimal;

@@ -1,6 +1,9 @@
 package com.w08e.common.core.domain;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
@@ -17,14 +20,23 @@ import java.util.Optional;
  */
 public abstract class BaseRepository<ID, D extends AggregateRoot, E extends BaseEntity> {
 
+    @PersistenceContext
     private EntityManager entityManager;
     private final Class<E> entityClass;
     protected CriteriaBuilder criteriaBuilder;
 
-    public BaseRepository(Class<E> entityClass, EntityManager entityManager) {
-        this.entityClass = entityClass;
-        this.entityManager = entityManager;
+    EntityManagerFactory entityManagerFactory;
+    @PostConstruct
+    private void init() {
         this.criteriaBuilder = entityManager.getCriteriaBuilder();
+    }
+
+    protected EntityManager getEntityManager() {
+        return entityManager;
+    }
+
+    public BaseRepository(Class<E> entityClass) {
+        this.entityClass = entityClass;
     }
 
     /**

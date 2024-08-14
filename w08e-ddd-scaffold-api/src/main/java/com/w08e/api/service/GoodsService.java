@@ -2,10 +2,10 @@ package com.w08e.api.service;
 
 import cn.hutool.core.lang.Pair;
 import com.w08e.api.command.GoodsCommand;
+import com.w08e.common.core.domain.user.User;
 import com.w08e.domain.goods.Goods;
 import com.w08e.domain.goods.factory.GoodsFactory;
 import com.w08e.domain.goods.repositoy.GoodsRepository;
-import com.w08e.domain.user.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
