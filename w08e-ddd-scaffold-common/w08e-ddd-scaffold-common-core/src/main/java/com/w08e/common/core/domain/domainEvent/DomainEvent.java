@@ -16,10 +16,9 @@ import static java.time.OffsetDateTime.now;
 /**
  * @author 梦想成为超人的猪猪侠
  */
-
 @Getter
-@Entity
-@Table(name = "ddd_domain_event")
+@Table
+@Entity(name = "ddd_domain_event")
 @NoArgsConstructor
 public  class DomainEvent {
 
@@ -27,19 +26,21 @@ public  class DomainEvent {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "snowflake_id_generator")
-    private String id;
+    private Long id;
 
     // 事件标识id不为空唯一
     @Column(name = "flag_id")
     private String flagId;
     // 事件对应的聚合根ID，不能为空
-    @Column(name = "domain_id")
+    @Column(name = "domain_id", unique = true)
     private Long domainId;
     // 事件类型
     @Column(name = "type")
+    @Enumerated(EnumType.STRING)
     private DomainEventType type;
     // 状态
     @Column(name = "status")
+    @Enumerated(EnumType.STRING)
     private DomainEventStatus status;
     // 已经发布的次数，无论成功与否
     @Column(name = "published_count")
@@ -57,9 +58,9 @@ public  class DomainEvent {
     /**
      * 这里把user作为必要参数 看具体业务
      */
-    protected DomainEvent(DomainEventType type, User user) {
+    public DomainEvent(DomainEventType type, User user) {
 
-        this.id = newEventId();
+//        this.id = newEventId();
         this.type = type;
         this.status = DomainEventStatus.CREATED;
         this.publishedCount = 0;

@@ -24,7 +24,7 @@ public class DomainEventHandlingInterceptor implements HandlerInterceptor {
                            Object handler,
                            ModelAndView modelAndView) {
 
-        List<String> eventIds = ThreadLocalDomainEventIdHolder.allEventIds();
+        List<Long> eventIds = ThreadLocalDomainEventIdHolder.allEventIds();
         log.info("本地线程池查询到事件:【{}】", eventIds);
         try {
             eventPublisher.publish(eventIds);

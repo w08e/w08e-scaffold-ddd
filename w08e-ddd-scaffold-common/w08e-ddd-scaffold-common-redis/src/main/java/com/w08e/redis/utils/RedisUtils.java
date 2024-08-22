@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -96,6 +97,17 @@ public class RedisUtils {
      */
     public static <T> void setCacheObject(final String key, final T value) {
         setCacheObject(key, value, false);
+    }
+
+    /**
+     * 缓存基本的对象，Integer、String、实体类等 不设置过期时间
+     *
+     * @param key   缓存的键值
+     * @param value 缓存的值
+     */
+    public static <T> void setCacheObjectWithoutExpire(final String key, final T value) {
+        RBucket<T> bucket = CLIENT.getBucket(key);
+        bucket.set(value, 0, TimeUnit.SECONDS);
     }
 
     /**

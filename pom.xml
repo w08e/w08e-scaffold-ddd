@@ -58,6 +58,8 @@
         <mysql.version>8.0.33</mysql.version>
         <weixin.version>4.6.0</weixin.version>
         <auth0.version>3.4.1</auth0.version>
+        <!-- mongodb -->
+        <mongo.version>3.2.6</mongo.version>
         <!-- OSS 配置 -->
         <aws.sdk.version>2.25.15</aws.sdk.version>
         <aws.crt.version>0.29.13</aws.crt.version>
@@ -174,6 +176,12 @@
                 <version>${auth0.version}</version>
             </dependency>
 
+            <!-- SpringBoot MongoDB -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-mongodb</artifactId>
+                <version>${mongo.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>

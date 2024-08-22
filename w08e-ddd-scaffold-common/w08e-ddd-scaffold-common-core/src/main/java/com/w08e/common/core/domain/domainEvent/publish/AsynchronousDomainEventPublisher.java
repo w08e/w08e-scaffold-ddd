@@ -25,11 +25,11 @@ public class AsynchronousDomainEventPublisher implements DomainEventPublisher {
     private TaskExecutor taskExecutor;
 
     @Override
-    public void publish(List<String> eventIds) {
+    public void publish(List<Long> eventIds) {
         if (CollectionUtil.isNotEmpty(eventIds)) {
             taskExecutor.execute(() -> {
                 // 根据事件ID，从事件发布表中加载相应事件
-                List<DomainEvent> domainEvents = domainEventDao.byIds(eventIds);
+                List<DomainEvent> domainEvents = domainEventDao.findAllById(eventIds);
                 // 发布事件
                 domainEvents.forEach(domainEventSender::send);
             });

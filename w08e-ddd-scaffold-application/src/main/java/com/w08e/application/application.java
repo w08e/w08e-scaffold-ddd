@@ -12,8 +12,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 
 @SpringBootApplication(scanBasePackages = {"com.w08e"})
-@EnableJpaRepositories(basePackages = "com.w08e.infrastructure.repository")
-@EntityScan(basePackages = "com.w08e.infrastructure.db.model", basePackageClasses = DomainEvent.class)
+@EnableJpaRepositories(basePackages = {"com.w08e.infrastructure.repository","com.w08e.common.core.domain.domainEvent"})
+//@EnableJpaRepositories(basePackages = {"com.w08e.infrastructure.repository"})
+@EntityScan(basePackages = {"com.w08e.infrastructure.db.model", "com.w08e.common.core.domain.domainEvent"}, basePackageClasses = DomainEvent.class)
+//@EntityScan(basePackages = "com.w08e.infrastructure.db.model")
 public class application {
     public static void main(String[] args) {
         SpringApplication.run(application.class, args);

@@ -4,6 +4,7 @@ import cn.hutool.core.collection.CollectionUtil;
 import com.w08e.common.core.domain.AggregateRoot;
 import com.w08e.common.core.domain.BaseEntity;
 import com.w08e.common.core.domain.domainEvent.DomainEvent;
+import com.w08e.common.core.domain.domainEvent.DomainEventDao;
 import com.w08e.common.core.domain.domainEvent.DomainEventType;
 import com.w08e.common.core.domain.domainEvent.publish.interception.ThreadLocalDomainEventIdHolder;
 import com.w08e.common.core.utils.StringUtils;
@@ -11,6 +12,7 @@ import com.w08e.common.core.utils.StringUtils;
 import com.w08e.json.utils.JsonUtils;
 import com.w08e.redis.utils.RedisUtils;
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.PersistenceContext;
@@ -22,9 +24,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * @Author: 梦想成为超人的猪猪侠
@@ -38,7 +42,8 @@ public abstract class BaseRepository<ID, D extends AggregateRoot, E extends Base
     private final Class<E> entityClass;
     protected CriteriaBuilder criteriaBuilder;
 
-    EntityManagerFactory entityManagerFactory;
+    @Resource
+    private DomainEventDao domainEventDao;
 
     @PostConstruct
     private void init() {
@@ -73,20 +78,18 @@ public abstract class BaseRepository<ID, D extends AggregateRoot, E extends Base
         }
         // 领域事件持久化redis 这里持久化到数据库更好
         if (CollectionUtil.isNotEmpty(domainObject.getEvents())) {
-                List<DomainEvent> events = domainObject.getEvents();
-            for (DomainEvent event : events) {
+
+            List<DomainEvent> domainEvents = new ArrayList<>();
+            for (DomainEvent event : domainObject.getEvents()) {
                 if (StringUtils.equalsIgnoreCase(event.getType().getCode(), DomainEventType.CREATE.getCode())) {
                     event.setArInfo(domainObject);
                 }
-                String entityKey = "domainEvent:" + event.getDomainId();
-                RedisUtils.setCacheObject(entityKey, JsonUtils.toJsonString(event));
-                String cacheObject = RedisUtils.getCacheObject(entityKey);
-                ThreadLocalDomainEventIdHolder.addEvents(events);//记录事件ID以备后用
-                DomainEvent domainEvent = JsonUtils.parseObject(cacheObject, DomainEvent.class);
+                DomainEvent save = domainEventDao.save(event);
 
+                domainEvents.add(save);
             }
+            ThreadLocalDomainEventIdHolder.addEvents(domainEvents); //记录事件ID以备后用
         }
-
     }
 
     public D load(ID id) {
